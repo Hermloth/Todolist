@@ -1,4 +1,4 @@
-  {
+{
   "name": "todolist",
   "version": "1.0.0",
   "description": "",
@@ -8,25 +8,17 @@
     "build": "cross-env NODE_ENV=development webpack",
     "build:prod": "cross-env NODE_ENV=production webpack",
     "watch": "cross-env NODE_ENV=development webpack --watch",
-    "start": "cross-env NODE_ENV=development webpack serve --open"
+    "start": "cross-env NODE_ENV=development webpack serve --open --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Hermloth/Admin_Dashboard.git"
-  },
-  "author": "Hermloth",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Hermloth/Admin_Dashboard/issues"
-  },
-  "homepage": "https://github.com/Hermloth/Admin_Dashboard#readme",
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "css-loader": "^7.1.2",
-    "html-webpack-plugin": "^5.6.0",
-    "style-loader": "^4.0.0",
-    "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0"
   }
 }

@@ -1,0 +1,56 @@
+:root{
+    --SidebarColour: #2A3840; 
+    --HeaderColour: #1F3B4D;
+    --FooterColour: black;
+    
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100vh
+}
+
+.mainFrame{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 50px 1fr;
+    grid-template-areas:    "header header"
+                            "sidebar content"
+                            "footer footer";
+}
+
+.HeaderFrame{
+    display: grid;
+    grid-area: header;
+    background-color: var(--HeaderColour);
+    box-shadow: 0px 5px 10px grey;
+    align-content: center;
+    padding-left: 20px;
+    color: white;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+.FooterFrame{
+    grid-area: footer;
+    box-shadow: 0px -1px 5px grey;
+    background-color: var(--FooterColour);
+    color: white;
+    align-content: end;
+    text-align: center;
+}
+
+.ContentFrame{
+    padding: 20px;
+    grid-area: content;
+}
+
+.SidebarFrame{
+    padding-top: 10px;
+    display: grid;
+    justify-content: center;
+    grid-area: sidebar;
+    background-color: var(--SidebarColour);
+}

@@ -2,22 +2,21 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
-
 module.exports = {
-  entry: './src/javascript.js',
-  devtool: 'inline-source-map',
   mode: process.env.NODE_ENV ?? 'development',
-  output: {
-    filename: '[name].[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
+  devtool: 'inline-source-map',
   devServer: {
     static: './dist',
+    port: 3003,
+    host: "127.0.0.1"
   },
+  optimization: {
+    runtimeChunk: 'single',
+  },
+  entry: './src/index.js',
   plugins: [
     new HtmlWebpackPlugin({
-        template: './src/template.html',
+      template: './src/template.html',
     }),
 
     // Webpack will automatically replace any process.env.<key> with the defined during build
@@ -29,9 +28,11 @@ module.exports = {
     
       "GLOBAL_TEST": JSON.stringify("I'm defined in Webpack!!")
     })
-],    
-  optimization: {
-    runtimeChunk: 'single',
+  ],
+  output: {
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   module: {
     rules: [
@@ -42,6 +43,18 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(csv|tsv)$/i,
+        use: ['csv-loader'],
+      },
+      {
+        test: /\.xml$/i,
+        use: ['xml-loader'],
       },
     ],
   },
