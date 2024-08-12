@@ -24,8 +24,4 @@ export function ConstructContent(){
         CardDataArray.push(new ToDo(objectParse.title, objectParse.description, objectParse.status))
         CreateCard(CardDataArray[data], ContentFrame);
     }
-
-
-
-
 }

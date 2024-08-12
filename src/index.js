@@ -5,7 +5,7 @@ import { ConstructFooter } from './FooterModule/ConstructFooter';
 import { AssignAddNoteEventListeners, ConstructSidebar } from './SidebarModule/ConstructSidebar';
 import { ToDo } from './ToDo';
 import { StoreToDo } from './ObjectAccess';
-
+import { CreateCardDialouge } from './CreateCardDialouge';
 
 
 //localStorage.clear();
@@ -39,6 +39,8 @@ console.log(totalCommitedItems);
 //localStorage.setItem("1", new ToDo("Test Object Title", "Test Object Description", "Test Status"))
 ConstructHeader();
 ConstructSidebar();
+const frame = document.querySelector(".SidebarFrame")
+CreateCardDialouge(frame);
 AssignAddNoteEventListeners();
 ConstructContent();
 ConstructFooter();
