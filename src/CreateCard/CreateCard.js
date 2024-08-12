@@ -1,9 +1,5 @@
 import { CreateDivElement } from "../CommonModules/CreateDivElement";
-import { CreateImgElement } from "../CommonModules/CreateImgElement";
-import { DeleteToDo } from "../ObjectAccess";
 import deleteButtonIMG from "./deleteButton.svg"
-import CardDataArray from "../ContentModule/ConstructContent.js"
-const SampleText = `Lorum Ipsum`;
 
 export function CreateCard (inputObject, parentFrame) {
     var cardFrame = CreateDivElement("ToDoCard", parentFrame);
@@ -33,16 +29,10 @@ export function CreateCard (inputObject, parentFrame) {
     CardStatusRow.appendChild(deleteButton);
 
     deleteButton.addEventListener("click", function(e) {
-        console.log("TEST LOG " + e.target)
         var clickedButton = Array.from(document.getElementsByClassName("deleteButton")).indexOf(e.target);
         localStorage.removeItem("debug");
         localStorage.removeItem(localStorage.key(clickedButton));
-        console.log(Array.from(document.getElementsByClassName("deleteButton")).indexOf(e.target) + " Delete Button Clicked")
-
-
-        // need to work out which button was click and remove the corresponding Local Storage and Array element
         cardFrame.remove(); 
-        
     });
     return cardFrame;
 }

@@ -15,7 +15,6 @@ export function AssignAddNoteEventListeners(){
     const addNoteIcon = document.querySelector(".menuImage");  
     addNoteIcon.addEventListener("click", () => {
         const dialog = document.getElementById("dialogBox");
-        console.log (dialog);
         dialog.showModal();
         StoreToDo(totalCommitedItems+1, "Test3", "Test3D", "Test3S");
         totalCommitedItems++

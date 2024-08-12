@@ -1,4 +1,3 @@
-import { CreateDivElement } from "./CommonModules/CreateDivElement";
 import { StoreToDo } from "./ObjectAccess";
 export function CreateCardDialouge(inputElement){
 var DialogContainer = document.createElement("dialog");

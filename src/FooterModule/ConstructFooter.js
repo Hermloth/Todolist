@@ -1,5 +1,4 @@
 import { CreateDivElement } from "../CommonModules/CreateDivElement";
-import { CreateImgElement } from "../CommonModules/CreateImgElement";
 
 const mainFrame = document.querySelector(".mainFrame");
 
